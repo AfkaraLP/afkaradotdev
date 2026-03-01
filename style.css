@@ -1,0 +1,602 @@
+/*
+ * Paper texture credit:
+ * Ivory Off White Paper Texture
+ * https://www.photos-public-domain.com/2012/05/24/ivory-off-white-paper-texture/
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IM+Fell+English:ital@0;1&family=UnifrakturMaguntia&display=swap');
+
+:root {
+  --yellowish: #F5E6C8;
+  --dark-yellowish: #625D48;
+  --black: #2A2218;
+  --white: #EEE;
+  --sepia: #D4C4A8;
+  --border-color: #2A2218;
+  --paper-texture: url('./assets/ivory-off-white-paper-texture.jpg');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--yellowish);
+  min-height: 100vh;
+}
+
+body {
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--paper-texture);
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 1000;
+  mix-blend-mode: multiply;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: var(--yellowish);
+}
+
+.masthead {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 3px double var(--border-color);
+  margin-bottom: 20px;
+}
+
+.masthead-title {
+  font-family: 'UnifrakturMaguntia', 'Old English Text MT', serif;
+  font-size: 4rem;
+  color: var(--black);
+  letter-spacing: 0.05em;
+  text-transform: none;
+  margin-bottom: 5px;
+}
+
+.masthead-subtitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--dark-yellowish);
+  letter-spacing: 0.1em;
+  text-transform: none;
+}
+
+.date-line {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 0.9rem;
+  color: var(--black);
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.divider-ornament {
+  padding: 0 15px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--black);
+}
+
+.double-line {
+  border: none;
+  border-top: 3px double var(--border-color);
+  margin: 20px 0;
+}
+
+.single-line {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 15px 0;
+}
+
+nav {
+  text-align: center;
+  padding: 15px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 25px;
+  background: var(--yellowish);
+}
+
+nav a {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--black);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0 20px;
+  padding: 5px 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+  cursor: pointer;
+  background: transparent;
+}
+
+nav a:hover {
+  border-bottom: 1px solid var(--black);
+}
+
+.ribbon {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: bold;
+  --s: 1.8em;
+  --d: .8em;
+  --c: .8em;
+  color: var(--white);
+  margin: 20px auto;
+  padding: 0 calc(var(--s) + .5em) var(--d);
+  line-height: 1.8;
+  background:
+    conic-gradient(at left var(--s) bottom var(--d),
+      #0000 25%, #0008 0 37.5%, #0004 0) 0 /50% 100% no-repeat,
+    conic-gradient(at right var(--s) bottom var(--d),
+      #0004 62.5%, #0008 0 75%, #0000 0) 100%/50% 100% no-repeat;
+  clip-path: polygon(0 var(--d), var(--s) var(--d), var(--s) 0, calc(100% - var(--s)) 0, calc(100% - var(--s)) var(--d), 100% var(--d), calc(100% - var(--c)) calc(50% + var(--d)/2), 100% 100%, calc(100% - var(--s) - var(--d)) 100%, calc(100% - var(--s) - var(--d)) calc(100% - var(--d)), calc(var(--s) + var(--d)) calc(100% - var(--d)), calc(var(--s) + var(--d)) 100%, 0 100%, var(--c) calc(50% + var(--d)/2));
+  background-color: var(--dark-yellowish);
+  width: fit-content;
+}
+
+.headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: var(--black);
+  text-align: center;
+  margin: 20px 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.subheadline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--black);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.section-header {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin: 30px 0 20px;
+  padding: 10px 0;
+  border-top: 2px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--yellowish);
+}
+
+.drop-cap {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--black);
+  text-align: justify;
+  margin-bottom: 20px;
+  background: var(--yellowish);
+}
+
+.drop-cap::first-letter {
+  float: left;
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: 4.5rem;
+  line-height: 0.8;
+  padding-right: 0.1em;
+  padding-top: 0.1em;
+  color: var(--black);
+}
+
+.article {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--black);
+  text-align: justify;
+  margin-bottom: 20px;
+  background: var(--yellowish);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 20px 0;
+}
+
+.columns>* {
+  background: var(--yellowish);
+}
+
+.column {
+  padding: 0 15px;
+}
+
+.column:first-child {
+  border-right: 1px solid var(--border-color);
+}
+
+.column:last-child {
+  border-right: none;
+}
+
+.project-card {
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  margin-bottom: 20px;
+  background: var(--yellowish);
+}
+
+.project-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 5px;
+  background: var(--yellowish);
+}
+
+.project-description {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 1rem;
+  color: var(--black);
+  line-height: 1.6;
+  background: var(--yellowish);
+}
+
+.contact-section {
+  text-align: center;
+  padding: 30px;
+  border: 2px solid var(--border-color);
+  margin: 30px 0;
+  background: var(--yellowish);
+}
+
+.contact-header {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: 2rem;
+  color: var(--black);
+  margin-bottom: 15px;
+}
+
+.contact-text {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 1.1rem;
+  color: var(--black);
+  font-style: italic;
+  margin-bottom: 20px;
+  background: var(--yellowish);
+}
+
+.contact-info {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--black);
+  background: var(--yellowish);
+}
+
+.contact-info a {
+  color: var(--black);
+  text-decoration: underline;
+  background: var(--yellowish);
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 3px double var(--border-color);
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 0.9rem;
+  color: var(--dark-yellowish);
+  background: var(--yellowish);
+}
+
+.ornament {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 15px 0;
+  color: var(--black);
+}
+
+.masthead-link {
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+}
+
+.masthead-link:hover .masthead-title {
+  color: var(--dark-yellowish);
+}
+
+.project-meta {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 0.9rem;
+  color: var(--dark-yellowish);
+  margin-bottom: 10px;
+  background: var(--yellowish);
+}
+
+.project-language {
+  font-style: italic;
+}
+
+.project-stars {
+  color: var(--black);
+}
+
+.project-title a {
+  color: var(--black);
+  text-decoration: none;
+  background: var(--yellowish);
+}
+
+.project-title a:hover {
+  text-decoration: underline;
+}
+
+.blog-list {
+  margin: 20px 0;
+}
+
+.blog-preview {
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  margin-bottom: 25px;
+  background: var(--yellowish);
+}
+
+.blog-preview-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--black);
+  margin-bottom: 5px;
+  background: var(--yellowish);
+}
+
+.blog-preview-title a {
+  color: var(--black);
+  text-decoration: none;
+  background: transparent;
+}
+
+.blog-preview-title a:hover {
+  text-decoration: underline;
+}
+
+.blog-preview-date {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--dark-yellowish);
+  margin-bottom: 15px;
+  background: var(--yellowish);
+}
+
+.blog-preview-excerpt {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--black);
+  margin-bottom: 15px;
+  background: var(--yellowish);
+}
+
+.read-more {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1px solid var(--black);
+  background: transparent;
+}
+
+.read-more:hover {
+  color: var(--dark-yellowish);
+  border-color: var(--dark-yellowish);
+}
+
+.blog-post {
+  margin: 20px 0;
+}
+
+.blog-content {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--black);
+  background: var(--yellowish);
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  font-family: 'Playfair Display', serif;
+  color: var(--black);
+  margin: 25px 0 15px;
+  background: var(--yellowish);
+}
+
+.blog-content h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.blog-content h2 {
+  font-size: 1.6rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.blog-content h3 {
+  font-size: 1.3rem;
+}
+
+.blog-content p {
+  margin-bottom: 15px;
+  text-align: justify;
+  background: var(--yellowish);
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin: 15px 0 15px 30px;
+  background: var(--yellowish);
+}
+
+.blog-content li {
+  margin-bottom: 8px;
+  background: var(--yellowish);
+}
+
+.blog-content blockquote {
+  border-left: 3px double var(--border-color);
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-style: italic;
+  background: var(--yellowish);
+}
+
+.blog-content code {
+  font-family: 'Courier New', monospace;
+  background: var(--sepia);
+  padding: 2px 6px;
+  font-size: 0.95em;
+}
+
+.blog-content pre {
+  background: var(--sepia);
+  padding: 15px;
+  overflow-x: auto;
+  margin: 20px 0;
+  border: 1px solid var(--border-color);
+}
+
+.blog-content pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.blog-content a {
+  color: var(--black);
+  text-decoration: underline;
+  background: transparent;
+}
+
+.blog-content strong {
+  font-weight: bold;
+  background: var(--yellowish);
+}
+
+.blog-content em {
+  font-style: italic;
+  background: var(--yellowish);
+}
+
+.back-link {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1px solid var(--black);
+  background: transparent;
+}
+
+.back-link:hover {
+  color: var(--dark-yellowish);
+  border-color: var(--dark-yellowish);
+}
+
+@media (max-width: 700px) {
+  .masthead-title {
+    font-size: 2.5rem;
+  }
+
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .column:last-child {
+    border-bottom: none;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .date-line {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+
+  .headline {
+    font-size: 1.8rem;
+  }
+
+  .blog-preview-title {
+    font-size: 1.2rem;
+  }
+}

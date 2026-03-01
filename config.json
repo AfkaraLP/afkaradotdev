@@ -1,0 +1,40 @@
+{
+  "year": 2026,
+  "projects": [
+    {
+      "name": "spellsp",
+      "description": "Hark! A spell-checking apparatus for the Language Server Protocol, forged in the fires of RUST",
+      "language": "Rust",
+      "owner": "afkaralp",
+      "repo": "spellsp"
+    },
+    {
+      "name": "qwen3-tts-webui",
+      "description": "Clone thine own voice with this marvellous web interface & programmatic gateway, powered by the Qwen3-TTS engine",
+      "language": "Python",
+      "owner": "afkaralp",
+      "repo": "qwen3-tts-webui"
+    },
+    {
+      "name": "ascii-renderer",
+      "description": "Witness! Two-dimensional Ascii rendering in Rust, complete with a three-dimensional demonstration for the curious",
+      "language": "Rust",
+      "owner": "afkaralp",
+      "repo": "ascii-renderer"
+    },
+    {
+      "name": "torus-http",
+      "description": "For the gentleman who desires HTTP without the theatrical complexity - synchronous & stupendously simple",
+      "language": "Rust",
+      "owner": "afkaralp",
+      "repo": "torus-http"
+    },
+    {
+      "name": "sexditor",
+      "description": "Born of curiosity! The author's expedition into ratatui, regex illumination, helix motions & the essential arts of saving and editing",
+      "language": "Rust",
+      "owner": "afkaralp",
+      "repo": "sexditor"
+    }
+  ]
+}
