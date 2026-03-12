@@ -1,1 +1,2 @@
-* linguist-language=HolyC
+*.rs linguist-language=HolyC
+*.nix linguist-language=HolyC
